@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/assets/icons/icon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/static/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../src/static/js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <title>{{title_app_name}} - {{ title }}</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="wrapper d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fa-brands fa-artstation"></i> {{title_app_name}}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown me-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="labsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-code me-1"></i>Исходный код ЛР
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="labsDropdown">
+                                <li><h6 class="dropdown-header">Нейронные сети</h6></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT/tree/modelH5-classificate-clothes-br" target="_blank">
+                                        <i class="fab fa-github me-2"></i>Tensorflow, ModelH5, classification clothes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT_2/tree/satellite-image-classification" target="_blank">
+                                        <i class="fab fa-github me-2"></i>TensorFlow, Classification satellite images
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Классификация PyTorch</h6></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT_2/tree/PyTorch-FastApi" target="_blank">
+                                        <i class="fab fa-github me-2"></i>PyTorch, Classification satellite images
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT_2/tree/MobileNetV2-FastAPI" target="_blank">
+                                        <i class="fab fa-github me-2"></i>MobileNetV2 model, Classification satellite images
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT_2/tree/VGG16-FastAPI" target="_blank">
+                                        <i class="fab fa-github me-2"></i>VGG16 model, Classification satellite images
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT_2/tree/OpenCV-FastAPI" target="_blank">
+                                        <i class="fab fa-github me-2"></i>OpenCV, ssd_mobilenet_v2 Classification satellite images
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-project-diagram me-1"></i>Проекты
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="projectsDropdown">
+                                <li><h6 class="dropdown-header">Git проектов 2-го курса</h6></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT" target="_blank">
+                                        <i class="fas fa-brain me-2"></i>ArthicsuGPT
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Git проектов 3-го курса</h6></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuGPT_2" target="_blank">
+                                        <i class="fas fa-robot me-2"></i>ArthicsuGPT_2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuNLP" target="_blank">
+                                        <i class="fas fa-robot me-2"></i>ArthicsuNLP
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://github.com/Arthicsu/ArthicsuLSTM" target="_blank">
+                                        <i class="fas fa-robot me-2"></i>ArthicsuLSTM
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Дополнительно</h6></li>
+                                <li>
+                                    <a class="dropdown-item" href="https://huggingface.co/datasets/blinoff/kinopoisk" target="_blank">
+                                        <i class="fas fa-database me-2"></i>Датасет blinoff's kinopoisk
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+
+        <footer class="footer mt-auto py-3 bg-dark text-white">
+            <div class="container text-center">
+                <span>
+                    Проект на GitHub:
+                    <a href="https://github.com/Arthicsu/ArthicsuLSTM" target="_blank" class="text-decoration-none text-light">
+                        <i class="fab fa-github"></i> Репозиторий {{title_app_name}}
+                    </a>
+                </span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

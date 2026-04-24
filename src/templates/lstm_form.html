@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <div class="card shadow border-0">
+            <div class="card-header bg-dark text-white text-center">
+                <h3 class="mb-0">Генерация текста с параметрами</h3>
+            </div>
+            <div class="card-body p-4">
+                <form action="/predict" method="post">
+                    <div class="mb-4">
+                        <label for="requested_seed" class="form-label">Придумайте начальный текст:</label>
+                        <textarea class="form-control" name="requested_seed" id="requested_seed" rows="3" placeholder="Введите начальный текст для генерации..."></textarea>
+                        <div class="form-text">Модель продолжит ваш текст.</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="requested_length" class="form-label">Длина генерируемого текста (символов):</label>
+                        <input type="number" class="form-control" name="requested_length" id="requested_length" value="25" min="1" max="500">
+                        <div class="form-text">По умолчанию: 25 символов</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="requested_temp" class="form-label">Температура (креативность):</label>
+                        <input type="number" class="form-control" name="requested_temp" id="requested_temp" value="0.5" step="0.1" min="0.1" max="2.0">
+                        <div class="form-text">По умолчанию: 0.5 (меньше = предсказуемее, больше = креативнее)</div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-outline-secondary mt-3">
+                            Сгенерировать текст
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
