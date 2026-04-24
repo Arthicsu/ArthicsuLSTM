@@ -7,7 +7,6 @@ from tensorflow.keras.utils import to_categorical
 import numpy as np
 import re, pickle
 
-
 # 1. Загрузка и предобработка данных
 with open('src/models/dataset/train_data.txt', 'r', encoding='utf-8') as f:
     text = f.read()
@@ -71,7 +70,46 @@ history = model.fit(X, Y_one_hot, batch_size=64, epochs=100, validation_split=0.
 model.save('src/models/lstm_model.keras')
 print("Модель сохранена как 'nlp_model.keras'")
 
+# 7. Функция для генерации текста
+def generate_text(seed_text, length=50):
+    """
+    Генерирует текст на основе начальной фразы
 
+    Args:
+        seed_text: начальная строка
+        length: количество генерируемых символов
+
+    Returns:
+        сгенерированная строка
+    """
+    generated = seed_text
+
+    for _ in range(length):
+        # Преобразуем последние inp_chars символов в индексы
+        if len(generated) < inp_chars:
+            input_seq = generated
+        else:
+            input_seq = generated[-inp_chars:]
+
+        # Преобразуем в последовательность индексов
+        x = tokenizer.texts_to_sequences([input_seq])[0]
+
+        # Дополняем, если длина меньше inp_chars
+        if len(x) < inp_chars:
+            x = [0] * (inp_chars - len(x)) + x
+
+        x = np.array(x).reshape(1, inp_chars)
+
+        # Предсказываем следующий символ
+        pred = model.predict(x, verbose=0)
+        next_char_idx = np.argmax(pred[0])
+
+        # Преобразуем индекс в символ
+        next_char = index_to_char.get(next_char_idx, ' ')
+
+        generated += next_char
+
+    return generated
 
 # 8. Тестирование генерации
 print("\n" + "="*50)
